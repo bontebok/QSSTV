@@ -1,7 +1,7 @@
 /**************************************************************************
 *   Copyright (C) 2000-2019 by Johan Maes                                 *
 *   on4qz@telenet.be                                                      *
-*   http://users.telenet.be/on4qz                                         *
+*   https://www.qsl.net/o/on4qz                                           *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -121,7 +121,7 @@ bool logFile::reopen()
   errorOut() << "opening logfile: " << finfaux.absoluteFilePath();
   if(!auxFile->open(QIODevice::WriteOnly))
     {
-      errorOut() << "auxillary file creation failed";
+      errorOut() << "auxiliary file creation failed";
       lf->close();
       return false;
     }
@@ -238,7 +238,7 @@ void logFile::addToAux(QString t)
 void logFile::addToAux(QString ){}
 #endif
 /*!
-  if enable=true logging wil be performed
+  if enable=true logging will be performed
   \return previous logging state (true if logging was enabled)
 */
 

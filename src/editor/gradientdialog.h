@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Copyright (C) 2000-2019 by Johan Maes                                 *
  *   on4qz@telenet.be                                                      *
- *   http://users.telenet.be/on4qz                                         *
+ *   https://www.qsl.net/o/on4qz                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -50,7 +50,7 @@ struct sgradientParam
 */
 class gradientForm;
 
-/** Widget to disply the various canvasItems */
+/** Widget to display the various canvasItems */
 class gradientDialog : public QDialog,private Ui::gradientForm
 {
 Q_OBJECT

@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Copyright (C) 2000-2019 by Johan Maes                                 *
  *   on4qz@telenet.be                                                      *
- *   http://users.telenet.be/on4qz                                         *
+ *   https://www.qsl.net/o/on4qz                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -346,7 +346,7 @@ void modeBase::showLine()
   combineColors();
 }
 /**
-  \brief tranfer data to rxImage in RGB mode
+  \brief transfer data to rxImage in RGB mode
 
   Combine  R, G and B arrays (like in Martin mode) into the rxImage and advances the displayCounter
 */
@@ -368,7 +368,7 @@ void modeBase::combineColors()
 
 
 /**
-  \brief tranfer data to rxImage in grayscale
+  \brief transfer data to rxImage in grayscale
 
   Black and White image transfer. greenArray contains the luminance info.
 */
@@ -386,7 +386,7 @@ void modeBase::grayConversion()
 }
 
 /**
-  \brief tranfer data to rxImage in YUV mode
+  \brief transfer data to rxImage in YUV mode
 
   Combine  Y, U  and V arrays (like in PD modes) into the rxImage and advances the displayCounter
 */

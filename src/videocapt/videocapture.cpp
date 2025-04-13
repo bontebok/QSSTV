@@ -1,7 +1,7 @@
 /**************************************************************************
 *   Copyright (C) 2000-2019 by Johan Maes                                 *
 *   on4qz@telenet.be                                                      *
-*   http://users.telenet.be/on4qz                                         *
+*   https://www.qsl.net/o/on4qz                                           *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -19,7 +19,7 @@
 *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
 *                                                                         *
 *                                                                         *
-*   This software contains parts of the following softwares               *
+*   This software contains parts of the following software                *
 *      videoCapture.cpp -- Kapture                                        *
 *                                                                         *
 *      Copyright (C) 2006-2009                                            *
@@ -383,7 +383,7 @@ bool videoCapture::stopStreaming()
   if(captureStop())
     {
       streaming = false;
-      addToLog(" * Succesful Stopped",LOGCAM);
+      addToLog(" * Successfully Stopped",LOGCAM);
     }
   return true;
 }

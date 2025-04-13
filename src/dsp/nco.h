@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Copyright (C) 2004 by Johan Maes - ON4QZ                              *
  *   on4qz@telenet.be                                                      *
- *   http://users.telenet.be/on4qz                                         *
+ *   https://www.qsl.net/o/on4qz                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -48,7 +48,7 @@ class NCO  // numerical controlled oscillator
   ~NCO()
     {
     }
-	/** initialize the oscilator
+	/** initialize the oscillator
 
 			This function is automatically called from the constructor
 			\param[in] frequency the frequency the oscillator must be running at

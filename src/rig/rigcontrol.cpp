@@ -1,7 +1,7 @@
 /**************************************************************************
 *   Copyright (C) 2000-2019 by Johan Maes                                 *
 *   on4qz@telenet.be                                                      *
-*   http://users.telenet.be/on4qz                                         *
+*   https://www.qsl.net/o/on4qz                                           *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -123,7 +123,7 @@ bool rigControl::init()
   // int verbose=0;
   // rig_set_debug(verbose<2 ? RIG_DEBUG_NONE: (rig_debug_level_e)verbose);
   // rig_debug(RIG_DEBUG_VERBOSE, "rigctl, %s\n", hamlib_version);
-  // test if we can contact the tranceiver
+  // test if we can contact the transceiver
 
   canSetFreq=(my_rig->caps->set_freq != NULL);
   canGetFreq=(my_rig->caps->get_freq != NULL);
