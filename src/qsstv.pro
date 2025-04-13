@@ -1,8 +1,9 @@
-QT       += core gui
+QT       += core gui websockets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network xml
 
 CONFIG += c++11
+CONFIG += debug
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -20,7 +21,7 @@ QMAKE_CXXFLAGS_DEBUG += -O0 -Wno-implicit-fallthrough -Wno-psabi
 QMAKE_CXXFLAGS_RELEASE-= -O2
 QMAKE_CXXFLAGS_RELEASE += -O3 -Wno-implicit-fallthrough -Wno-psabi
 
-INCLUDEPATH += config dispatch drmrx drmtx dsp editor logbook mainwidgets rig scope sound sstv utils widgets xmlrpc videocapt
+INCLUDEPATH += config dispatch drmrx drmtx dsp editor logbook mainwidgets rig scope sound sstv utils widgets xmlrpc videocapt websocket
 #QMAKE_LIBDIR += $$[QT_SYSROOT]/usr/local/lib
 
 CONFIG += link_pkgconfig
@@ -191,7 +192,8 @@ SOURCES += main.cpp\
     utils/ftpthread.cpp \
     utils/ftpfunctions.cpp \
     editor/basegraphicitem.cpp \
-    editor/templateviewer.cpp
+    editor/templateviewer.cpp \
+    websocket/websockethandler.cpp
 
 !macx: SOURCES += sound/soundalsa.cpp \
     videocapt/cameradialog.cpp \
@@ -363,7 +365,8 @@ HEADERS  += mainwindow.h \
     utils/ftpevents.h \
     utils/ftpfunctions.h \
     editor/basegraphicitem.h \
-    editor/templateviewer.h
+    editor/templateviewer.h \
+    websocket/websockethandler.h
 
 !macx: HEADERS +=  sound/soundalsa.h \
     videocapt/cameradialog.h \

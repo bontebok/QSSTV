@@ -3,6 +3,7 @@
 #include "soundbase.h"
 #include <QPixmap>
 #include <QCursor>
+#include "websockethandler.h"
 
 
 const QString MAJORVERSION  = "9.5";
@@ -45,6 +46,7 @@ xmlInterface *xmlIntfPtr;
 logBook *logBookPtr;
 fileWatcher *fileWatcherPtr;
 
+WebSocketHandler *webSocketPtr;
 
 int fftNumBlocks=2;
 bool useHybrid;

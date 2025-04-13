@@ -16,6 +16,7 @@ class logBook;
 class dispatcher;
 class fileWatcher;
 class ftpThread;
+class WebSocketHandler;
 
 enum etransmissionMode {TRXSSTV,TRXDRM,TRXNOMODE};
 
@@ -49,6 +50,8 @@ extern rigControl *rigControllerPtr;
 extern xmlInterface *xmlIntfPtr;
 extern configDialog *configDialogPtr;
 extern logBook *logBookPtr;
+
+extern WebSocketHandler *webSocketPtr;
 
 extern int fftNumBlocks;
 

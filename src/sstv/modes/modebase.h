@@ -23,6 +23,7 @@
 #include "../sstvparam.h"
 #include "imageviewer.h"
 #include <math.h>
+#include "websockethandler.h"
 
 #define MODESTATESCALER 10
 

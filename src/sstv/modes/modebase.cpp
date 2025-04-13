@@ -47,6 +47,8 @@ const QString stateStr[modeBase::MBTXGAPROBOT+1]=
 
 modeBase::modeBase(esstvMode m, unsigned int len, bool tx, bool narrowMode)
 {
+  webSocketPtr->sendOpen("ws://localhost:8080");
+
   mode=m;
   narrow=narrowMode;
   if(narrow)
@@ -161,6 +163,10 @@ void modeBase::init(DSPFLOAT clk)
   //    {
   //     rxWidgetPtr->getImageViewerPtr()->createImage(QSize(activeSSTVParam->numberOfPixels,activeSSTVParam->numberOfDisplayLines),QColor(128,128,128));
   //    }
+  if (!transmit) {
+    addToLog(QString("modebase was created %1 %2 x %3 - %4, %5").arg(myCallsign).arg(activeSSTVParam->numberOfPixels).arg(activeSSTVParam->numberOfDisplayLines).arg(getSSTVModeNameLong(mode)).arg(length),LOGWS);
+    webSocketPtr->sendRXDetails(myCallsign, getSSTVModeNameLong(mode), activeSSTVParam->numberOfPixels, activeSSTVParam->numberOfDisplayLines);
+  }
 }
 
 
@@ -346,7 +352,7 @@ void modeBase::showLine()
   combineColors();
 }
 /**
-  \brief transfer data to rxImage in RGB mode
+  \brief tranfer data to rxImage in RGB mode
 
   Combine  R, G and B arrays (like in Martin mode) into the rxImage and advances the displayCounter
 */
@@ -362,13 +368,14 @@ void modeBase::combineColors()
 
       //        pixelArray[i]=qRgb(255,0,0);
     }
+  webSocketPtr->sendHorizontalLine(activeSSTVParam->numberOfPixels, displayLineCounter, pixelArray);
   displayLineCounter++;
 }
 
 
 
 /**
-  \brief transfer data to rxImage in grayscale
+  \brief tranfer data to rxImage in grayscale
 
   Black and White image transfer. greenArray contains the luminance info.
 */
@@ -382,11 +389,12 @@ void modeBase::grayConversion()
     {
       pixelArray[i]=qRgb(greenArrayPtr[i],greenArrayPtr[i],greenArrayPtr[i]);
     }
+  webSocketPtr->sendHorizontalLine(activeSSTVParam->numberOfPixels, displayLineCounter, pixelArray);
   displayLineCounter++;
 }
 
 /**
-  \brief transfer data to rxImage in YUV mode
+  \brief tranfer data to rxImage in YUV mode
 
   Combine  Y, U  and V arrays (like in PD modes) into the rxImage and advances the displayCounter
 */
@@ -407,6 +415,7 @@ void modeBase::yuvConversion(unsigned char *array)
       g=(g>255 ? 255 : g); g=(g<0 ? 0 : g);
       pixelArray[i]=qRgb(r,g,b);
     }
+  webSocketPtr->sendHorizontalLine(activeSSTVParam->numberOfPixels, displayLineCounter, pixelArray);
   displayLineCounter++;
 }
 
