@@ -55,3 +55,6 @@ compile_commands.json
 documentation/api/api_html
 documentation/manual/manual_html
 
+# Because source isn't in the root
+/src/.qmake.cache
+/src/.qmake.stash
